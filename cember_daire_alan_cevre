@@ -1,0 +1,48 @@
+#include<stdio.h>
+#include<math.h>
+//fonksiyon beyanları
+float cembercapihesapla(float yaricap);
+float cembercevrehesapla(float yaricap);
+float dairealanhesapla(float yaricap);
+
+int main(){
+
+float yaricap , cap , cevre , alan;
+
+//kullanıcıdan yarıcap bilgisi al
+
+printf("çemberin/dairenin yarıçapını giriniz: ");
+scanf("%f" , &yaricap);
+
+
+// çap çevre alan hesapla
+
+cap = cembercapihesapla(yaricap);
+cevre = cembercevrehesapla(yaricap);
+alan = dairealanhesapla(yaricap);
+
+
+//sonuçları yazdır
+
+printf("çemberin çapı = %.2f birimdir \n" , cap);
+printf("çemberin çevresi = %.2f birimdir \n ", cevre);
+printf("dairenin alanı = %.2f birimkaredir" , alan);
+
+return 0;
+}
+//yarıcapları verilen bir çemberin cevresini hesaplayan fonksiyon
+float cembercapihesapla(float yaricap){
+    return(2 * yaricap);
+}
+
+float cembercevrehesapla(float yaricap)
+
+{
+    return(2 * M_PI * yaricap); //PI = 3.14
+    
+}
+//yaricap verilen bir dairenin alanını hesaplayan fonksiyon
+float dairealanhesapla(float yaricap)
+{
+    return(M_PI * yaricap * yaricap); // PI = 3.14
+}
